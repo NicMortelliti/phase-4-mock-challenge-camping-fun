@@ -11,6 +11,17 @@ class ActivitiesController < ApplicationController
     render json: activity, serializer: CamperShowSerializer
   end
 
+  def destroy
+    activity = Activity.find(params[:id])
+    if activity
+      activity.destroy
+      head :no_content
+    else
+      render render_not_found_response
+    end
+
+  end
+
   private
 
   def render_not_found_response

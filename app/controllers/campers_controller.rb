@@ -11,7 +11,7 @@ class CampersController < ApplicationController
     render json: camper, Serializer: CamperShowSerializer
   end
 
-    private
+  private
 
   def render_not_found_response
     render json: { error: "Camper not found" }, status: :not_found

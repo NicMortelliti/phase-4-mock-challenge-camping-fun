@@ -8,7 +8,7 @@ class CampersController < ApplicationController
 
   def show
     camper = find_camper
-    render json: camper, serializer: CamperWithActivitiesSerializer
+    render json: camper, serializer: CamperActivitiesSerializer
   end
 
   def create

@@ -6,6 +6,11 @@ class ActivitiesController < ApplicationController
     render json: activities
   end
 
+  def show
+    activity = Activity.find(params[:id])
+    render json: activity, serializer: CamperShowSerializer
+  end
+
   private
 
   def render_not_found_response
